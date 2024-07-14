@@ -3,10 +3,10 @@ import Register from "./pages/register/Register";
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
+  
   Outlet,
   Navigate,
-  useLocation,
+  
 } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import LeftBar from "./components/leftBar/LeftBar";
@@ -19,6 +19,11 @@ import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/authContext";
 
 import Userlist from "./pages/Users/Userlist";
+import Postlist from "./pages/Posts/Postlist";
+import Storylist from "./pages/Stories/Storylist";
+import Commentlist from "./pages/Comments/Commentlist";
+import Commentupdate from "./pages/Comments/Commentupdate";
+
 import DashboardLayout from "./Layout/DashboardLayout";
 
 function App() {
@@ -84,7 +89,14 @@ function App() {
       element: <DashboardLayout />,
       children: [
         { path: "/dashboard/userlist", element: <Userlist /> },
+        { path: "/dashboard/postlist", element: <Postlist /> },
+        { path: "/dashboard/storylist", element: <Storylist /> },
+        { path: "/dashboard/commentlist", element: <Commentlist /> },
+
         { path: "/dashboard/userlist/userupdate", element: <Userlist /> },
+        { path: "/dashboard/postlist/postupdate", element: <Postlist /> },
+        { path: "/dashboard/storylist/storyupdate", element: <Storylist /> },
+        { path: "/dashboard/commentlist/commentupdate", element: <Commentupdate /> },
       ],
     },
     {},
